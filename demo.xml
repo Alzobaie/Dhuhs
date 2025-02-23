@@ -1,0 +1,13 @@
+<config>
+<!--  Assign different subnetworks for each component  -->
+<!--  gNBs get 10.0.0.x  -->
+<interface hosts="gnb*" names="cellular" address="10.0.0.0" netmask="255.255.255.0"/>
+<!--  UEs get 10.0.1.x  -->
+<interface hosts="ue*" names="cellular" address="10.0.1.0" netmask="255.255.255.0"/>
+<!--  MEC Hosts get 10.0.2.x  -->
+<interface hosts="mecHost*" address="10.0.2.0" netmask="255.255.255.0"/>
+<!--  iUPFs get 10.0.3.x  -->
+<interface hosts="iupf*" names="pppIf" address="10.0.3.0" netmask="255.255.255.0"/>
+<!--  Assign remaining IPs to other components using 192.168.x.x  -->
+<interface hosts="**" address="192.168.1.0" netmask="255.255.255.0"/>
+</config>
